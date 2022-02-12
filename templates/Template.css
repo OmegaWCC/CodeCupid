@@ -1,0 +1,18 @@
+.primaryColor{
+    color: #56A3A6;
+    font-family: Garamond;
+}
+
+.secondaryColor{
+    color: #F67E7D;
+    font-family: Garamond;
+}
+
+.white{
+    color:  #FFFF
+}
+
+.bordering{
+    border: 2px solid #56A3A6;
+    border-radius: 5px;
+}

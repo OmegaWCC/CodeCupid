@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{User.name}'s Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Template.css" text="text/css">
+    </head>
+
+    <body class="container p-0 pt-5 borderClass">
+
+        <div class="bordering pt-5">
+            <div class="row secondaryColor ">
+                <h2 class=" col-8">
+                    {User.name}
+                </h2>
+
+                <!--Possible icons  -->
+                <div>
+                    <a href="#" class="col-1"> Instagram </a>
+                    <a href="#" class="col-1"> GitHub </a>
+                    <a href ="#"class="col-1"> Twitter </a>
+                    <a href ="#"class="col-1"> Settings</a>
+                </div>
+            </div>
+
+            <!-- User Bio -->
+            <div class="primaryColor pt-5 ">
+                <h3>
+                    Bio:
+                </h3>
+                <p class="p-0 m-0">
+                    {User.bio} 
+                </p>
+            </div>
+
+            <!-- Skills location and Projects -->
+                <div class="row secondaryColor pt-5 mr-0 ml-0">
+                    {User.Skills}
+                </div>
+
+                <div class="row primaryColor pt-5 mr-0 ml-0">
+                    {User.Location}
+                </div>
+
+                <div class="row secondaryColor pt-5 mr-0 ml-0 mb-5">
+                    {User.Projects}
+            </div>
+        </div>
+    </body>
+
+</html>
