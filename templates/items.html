@@ -9,9 +9,9 @@
 <body>
     <h1>Items on the list</h1>
     <ol>
-        {% for item in items %}
-            <li>{{item.name}}</li> 
-        {% endfor %}
+        {% for user in users %}
+            <li>{{user.name}}, {{user.interests}}</li> 
+        {% endfor %}    
     </ol>
     <a href="{{url_for('index')}}">Submit another</a>
 </body>
