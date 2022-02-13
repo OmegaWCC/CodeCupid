@@ -18,11 +18,12 @@
             <div class="card">
                 <div class="container">
                 <h4><b>{{user.name}}</b></h4>
-                <ul>
+                <span>Interests: </span>
+                <span>
                 {% for interest in user.interests %}
-                    <li class="interest">{{interest.name}}</li>
+                    {{ interest.name + ", " if not loop.last else interest.name }}
                 {% endfor %}
-                </ul>
+                </span>
                 </div>
             </div>
         </div>   
