@@ -33,7 +33,8 @@ def signup_post():
     user_password = request.form.get('user_password')
     user_name = request.form.get('user_name')
     user_age = request.form.get('user_age')
-    user_interests = request.form.getlist('user_interests')
+    interests = request.form.getlist('user_interests')
+    
 
     user = User.query.filter_by(email=user_email).first()
     if user:
