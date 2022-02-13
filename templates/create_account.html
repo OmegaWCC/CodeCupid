@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../static/create_user.js" defer></script>
+    <title>Example</title>
+</head>
+
+<body>
+    <h1>Add an user</h1>
+    <form method="post" action="/signup">
+        <div id="user_name">
+            <div>
+                <label for="user_email">Email</label>
+                <input type="text" name="user_email" id="user_email" placeholder="_@gmail.com" required>
+            </div>
+            <div>
+            <label for="user_password">Password</label>
+            <input type="password" name="user_password" id="user_password" required>
+            </div>
+            <div>
+            <label for="user_name">Enter your name</label>
+            <input type="text" name="user_name" id="user_name" placeholder="" required>
+            </div>
+            <div>
+            <label for="user_age">Enter your age</label>
+            <input type="text" name="user_age" id="user_age" placeholder="18" required>
+            </div>
+        </div>
+        <div id="user_interests_container">
+            <label>Interests: </label>
+            <input type="text" class="user_interest" name="user_interests" placeholder="C++" required>
+            <input type="text" class="user_interest" name="user_interests" placeholder="Python" required>
+            <input type="text" class="user_interest" name="user_interests" placeholder="Hackathons" required>
+        </div>
+        <div class="controls">
+            <button type="button" href="#" id="add_more_fields">Add More</button>
+            <button type="button" href="#" id="remove_fields">Remove</button>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+</body>
+</html>
