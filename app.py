@@ -24,6 +24,8 @@ def items():
     def key(x):
         return matching_algo(current_user, x)
     users = User.query.filter(User.id != current_user.id).all()
+    for user in users:
+        user.match = matching_algo(current_user, user)
     users.sort(key=key, reverse=True)
     return render_template('items.html', users=users)
 
@@ -43,7 +45,7 @@ def signup_post():
     user = User(email=user_email, password=generate_password_hash(user_password, method='sha256'), name=user_name, age=user_age, interests=user_interests)
     db.session.add(user)
     db.session.commit()
-    return render_template('create_account_success.html')
+    return redirect(url_for('login'))
 
 
 @app.get('/')
