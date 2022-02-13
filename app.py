@@ -21,7 +21,11 @@ login_manager.init_app(app)
 
 @app.get('/items')
 def items():
-    return render_template('items.html', users=User.query.all())
+    def key(x):
+        return matching_algo(current_user, x)
+    users = User.query.filter(User.id != current_user.id).all()
+    users.sort(key=key, reverse=True)
+    return render_template('items.html', users=users)
 
 @app.post('/signup')
 def signup_post():
@@ -64,7 +68,8 @@ def login_post():
 @app.get('/profile')
 @login_required
 def profile():
-    return f"<h1>User: {current_user}</h1>"
+    print(current_user)
+    return f"<h1>User: {current_user.name}</h1>"
 
 @login_manager.user_loader
 def load_user(user_id):

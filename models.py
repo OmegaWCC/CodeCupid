@@ -12,7 +12,7 @@ class User(UserMixin, db.Model):
     age = db.Column(db.Integer, nullable=False)
     interests = db.relationship('Interest', backref='user', lazy=True)
     def __repr__(self):
-        return f'<User {self.name}>'
+        return f'<User {self.email}>'
 
 class Interest(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/items.css">
     <title>Example</title>
 </head>
 <body>
-    <h1>Users</h1>
-    <ol>
+    <div class="wrap-card">
+        <h1>Your matches</h1>
+    </div>
+    
+    
         {% for user in users %}
-            <li>{{user.name}}, {{user.interests}}</li> 
-        {% endfor %}    
-    </ol>
-    <a href="{{url_for('signup')}}">Create Account</a>
+        <div class="wrap-card">
+            <div class="card">
+                <div class="container">
+                <h4><b>{{user.name}}</b></h4>
+                <span>Interests: </span>
+                <span>
+                {% for interest in user.interests %}
+                    {{ interest.name + ", " if not loop.last else interest.name }}
+                {% endfor %}
+                </span>
+                </div>
+            </div>
+        </div>   
+        {% endfor %} 
+    
 </body>
 </html>
