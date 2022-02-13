@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../static/create_user.js" defer></script>
+    <link rel="stylesheet" href="../static/form.css">
     <title>Example</title>
 </head>
 
-<body>
-    <h1>Add an user</h1>
+<body class="form-style-6">
+    <h1>Create Your Profile</h1>
     <form method="post" action="/signup">
         <div id="user_name">
             <div>
                 <label for="user_email">Email</label>
-                <input type="text" name="user_email" id="user_email" placeholder="_@gmail.com" required>
+                <input type="text" name="user_email" id="user_email" placeholder="example@gmail.com" required>
             </div>
             <div>
             <label for="user_password">Password</label>
@@ -36,8 +37,6 @@
             <input type="text" class="user_interest" name="user_interests" placeholder="Hackathons" required>
         </div>
         <div class="controls">
-            <button type="button" href="#" id="add_more_fields">Add More</button>
-            <button type="button" href="#" id="remove_fields">Remove</button>
             <input type="submit" value="Submit" />
         </div>
     </form>
