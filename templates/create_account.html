@@ -10,14 +10,27 @@
 
 <body>
     <h1>Add an user</h1>
-    <form method="post" action="/submit_item">
+    <form method="post" action="/signup">
         <div id="user_name">
+            <div>
+                <label for="user_email">Email</label>
+                <input type="text" name="user_email" id="user_email" placeholder="_@gmail.com" required>
+            </div>
+            <div>
+            <label for="user_password">Password</label>
+            <input type="password" name="user_password" id="user_password" required>
+            </div>
+            <div>
             <label for="user_name">Enter your name</label>
-            <input type="text" name="user_name" id="user_name" placeholder="What is your favorite color?" required>
+            <input type="text" name="user_name" id="user_name" placeholder="" required>
+            </div>
+            <div>
             <label for="user_age">Enter your age</label>
             <input type="text" name="user_age" id="user_age" placeholder="18" required>
+            </div>
         </div>
         <div id="user_interests_container">
+            <label>Interests: </label>
             <input type="text" class="user_interest" name="user_interests" placeholder="C++" required>
             <input type="text" class="user_interest" name="user_interests" placeholder="Python" required>
             <input type="text" class="user_interest" name="user_interests" placeholder="Hackathons" required>
