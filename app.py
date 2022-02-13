@@ -33,7 +33,8 @@ def signup_post():
     user_password = request.form.get('user_password')
     user_name = request.form.get('user_name')
     user_age = request.form.get('user_age')
-    interests = request.form.getlist('user_interests')
+    user_interests = request.form.getlist('user_interests')
+    user_bio = request.form.get('user_bio')
     
 
     user = User.query.filter_by(email=user_email).first()
@@ -41,7 +42,7 @@ def signup_post():
         return redirect(url_for('signup'))
     
     user_interests = [Interest(name=interest) for interest in user_interests]
-    user = User(email=user_email, password=generate_password_hash(user_password, method='sha256'), name=user_name, age=user_age, interests=user_interests)
+    user = User(email=user_email, password=generate_password_hash(user_password, method='sha256'), name=user_name, age=user_age, interests=user_interests, bio=user_bio)
     db.session.add(user)
     db.session.commit()
     return render_template('create_account_success.html')

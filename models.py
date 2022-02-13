@@ -11,6 +11,7 @@ class User(UserMixin, db.Model):
     name = db.Column(db.Text, unique=False, nullable=False)
     age = db.Column(db.Integer, nullable=False)
     interests = db.relationship('Interest', backref='user', lazy=True)
+    bio = db.Column(db.Text, unique=False, nullable=False)
     def __repr__(self):
         return f'<User {self.email}>'
 
