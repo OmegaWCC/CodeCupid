@@ -1,5 +1,40 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    color: white;
+}
+/* set the background color of the main page to A GOOD LOOKING COLOR */
+body {
+    background-color: rgb(3, 3, 53);
+}
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+a.button {
+    /* vertically center */
+    /* horizontally center */
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e05a1c;
+    color: white;
+    padding: 14px 50px;
+    margin: 10px 500px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .wrap-card {
@@ -18,8 +53,11 @@
 
 .card {
     /* Add shadows to create the "card" effect */
+    background-color: white;
+    margin: 0.5em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    border-radius: 20px;
     width: 50%;
   }
   

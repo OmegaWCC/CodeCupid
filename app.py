@@ -65,11 +65,11 @@ def login_post():
     else:
         return redirect(url_for('login'))
 
-@app.get('/profile')
+@app.get('/profile/<id>')
 @login_required
-def profile():
-    print(current_user)
-    return f"<h1>User: {current_user.name}</h1>"
+def profile(id):
+    user = User.query.filter_by(id=id).first()
+    return render_template('profile.html', user=user)
 
 @login_manager.user_loader
 def load_user(user_id):
